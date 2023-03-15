@@ -2,7 +2,7 @@
 
 ## Kyle Larson
 
-![hw04](https://github.com/github/docs/actions/workflows/hw04_tests.yml/badge.svg)
+![hw04](https://github.com/saddleback-college-cs1b/hw04-linkedlists-larsonkyle/actions/workflows/hw04_tests.yml/badge.svg)
 
 ## Problem Statement
 
