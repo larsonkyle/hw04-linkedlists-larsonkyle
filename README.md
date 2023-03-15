@@ -1,10 +1,8 @@
 # HW04: Doubly Linked List Using Struct and Pointers (C-style)
 
-## Firstname Lastname
+## Kyle Larson
 
-TODO - Update your name in this readme.
-
-TODO - Add your github actions badge here.
+![hw04](https://github.com/github/docs/actions/workflows/hw04_tests.yml/badge.svg)
 
 ## Problem Statement
 
