@@ -62,3 +62,24 @@ void prependArtist(ALIST *l, ARTIST *a){
     l->length++;
   }
 }
+
+void appendArtist(ALIST *l, ARTIST *a){
+  ArtistEntry *traverseList = nullptr;
+
+  if(!l->last){
+    l->last = newArtistEntry(a);
+    l->first = l->last;
+    l->length++;
+  }
+  else{
+    traverseList = l->last;
+
+    traverseList->next = newArtistEntry(a);
+    traverseList = traverseList->next;
+
+    traverseList->prev = l->last;
+    l->last = traverseList;
+    l->length++;
+  }
+}
+
