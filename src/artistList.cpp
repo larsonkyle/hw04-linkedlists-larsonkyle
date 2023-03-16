@@ -28,3 +28,18 @@ ALIST *newArtistList() {
 
   return p;
 }
+
+AENTRY *newArtistEntry(ARTIST *a) {
+  ArtistEntry *p = nullptr;
+
+  p = new ArtistEntry;
+
+  p->list = nullptr;
+  p->next = nullptr;
+  p->prev = nullptr;
+
+  p->artist = a;
+
+  return p;
+}
+

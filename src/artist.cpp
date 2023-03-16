@@ -10,7 +10,7 @@ vector<string> array2vec(string src[AR_LEN]) {
 }
 
 ARTIST *newArtist(string artist_id, string artist_name, int total_followers, string genres[AR_LEN], int popularity){
-  Artist *p; 
+  Artist *p = nullptr; 
 
   p = new Artist; 
 
