@@ -83,3 +83,32 @@ void appendArtist(ALIST *l, ARTIST *a){
   }
 }
 
+void insertArtistBefore(AENTRY *e, ARTIST *a){
+  int test;
+}
+
+void insertArtistAfter(AENTRY *e, ARTIST *a){
+  int test;
+}
+
+void removeFirstArtist(ALIST *l){
+  int test;
+}
+
+void removeLastArtist(ALIST *l){
+  int test;
+}
+
+void printArtistList(ALIST *l){
+  int test;
+}
+
+ARTIST *findArtistName(ALIST *l, string name){
+  ARTIST *test = nullptr;
+
+  return test;
+}
+
+void removeArtistbyName(ALIST *l, string name){
+  int test;
+}

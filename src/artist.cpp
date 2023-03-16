@@ -26,3 +26,11 @@ ARTIST *newArtist(string artist_id, string artist_name, int total_followers, str
 
   return p;
 }
+
+void deleteArtist(ARTIST *a){
+  int test;
+}
+
+void printArtist(ARTIST *a){
+  int test;
+}
