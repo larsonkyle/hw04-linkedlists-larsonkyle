@@ -9,3 +9,20 @@ vector<string> array2vec(string src[AR_LEN]) {
   return dest;
 }
 
+ARTIST *newArtist(string artist_id, string artist_name, int total_followers, string genres[AR_LEN], int popularity){
+  Artist *p; 
+
+  p = new Artist; 
+
+  p->artist_id = artist_id;
+  p->artist_name = artist_name;
+  p->total_followers = total_followers;
+
+  for (int i = 0; i < AR_LEN; i++){
+    p->genres[i] = genres[i];
+  }
+
+  p->popularity = popularity;
+
+  return p;
+}
