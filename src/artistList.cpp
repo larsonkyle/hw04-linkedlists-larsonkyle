@@ -17,3 +17,14 @@ vector<ARTIST> linkedList2Vector(ALIST *l) {
   return ll_vec;
 }
 
+ALIST *newArtistList() {
+  ArtistList *p = nullptr;
+
+  p = new ArtistList;
+
+  p->length = 0;
+  p->first = nullptr;
+  p->last = nullptr;
+
+  return p;
+}
