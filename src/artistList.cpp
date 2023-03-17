@@ -84,7 +84,36 @@ void appendArtist(ALIST *l, ARTIST *a){
 }
 
 void insertArtistBefore(AENTRY *e, ARTIST *a){
-  int test;
+  ArtistEntry *newNode; 
+  ArtistEntry *temp; 
+
+  newNode = new ArtistEntry;
+  newNode->artist = a;
+
+  if (e->prev == nullptr){
+    newNode->next = e; 
+    e->prev = newNode;
+
+    e->list.first = newNode;
+    e->list.length++;
+
+    newNode = nullptr;
+    temp = nullptr;
+  }
+  else{
+    temp = e->prev; 
+    temp->next = newNode;
+
+    e->prev = newNode;
+
+    newNode->next = e; 
+    newNode->prev = temp;
+
+    e->list.length++;
+    
+    newNode = nullptr;
+    temp = nullptr;
+  }
 }
 
 void insertArtistAfter(AENTRY *e, ARTIST *a){
