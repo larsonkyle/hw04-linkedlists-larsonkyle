@@ -104,8 +104,8 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     e->prev = newNode;
 
-    e->list.first = newNode;
-    e->list.length++;
+    e->list->first = newNode;
+    e->list->length++;
 
     newNode = nullptr;
     temp = nullptr;
@@ -119,7 +119,7 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     newNode->prev = temp;
 
-    e->list.length++;
+    e->list->length++;
     
     newNode = nullptr;
     temp = nullptr;
@@ -137,8 +137,8 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
     e->next = newNode;
     newNode->prev = e;
 
-    e->list.last = newNode;
-    e->list.length++;
+    e->list->last = newNode;
+    e->list->length++;
 
     newNode = nullptr;
     temp = nullptr;
@@ -152,7 +152,7 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
     temp->prev = newNode;
     newNode->next = temp; 
 
-    e->list.length++;
+    e->list->length++;
 
     newNode = nullptr;
     temp = nullptr;
@@ -165,7 +165,7 @@ void removeFirstArtist(ALIST *l){
   temp = l->first; 
   l->first = temp->next;
 
-  l->first.prev = nullptr;
+  l->first->prev = nullptr;
 
   delete temp;
   temp = nullptr;
@@ -177,7 +177,7 @@ void removeLastArtist(ALIST *l){
   temp = l->last;
   l->last = temp->prev; 
 
-  l->last.next = nullptr;
+  l->last->next = nullptr;
 
   delete temp; 
   temp = nullptr;
@@ -185,19 +185,18 @@ void removeLastArtist(ALIST *l){
 
 void printArtistList(ALIST *l){
   ArtistEntry *traverseList;
-
   traverseList = l->first;
 
 // artist_id,artist_name,total_followers,genres, popularity\n
   while(traverseList != nullptr){
-    cout << traverseList->artist_id << ", "
-         << traverseList->artist_name << ", "
-         << traverseList->total_followers << ", ";
+    cout << traverseList->artist->artist_id << ", "
+         << traverseList->artist->artist_name << ", "
+         << traverseList->artist->total_followers << ", ";
   
     for(int i = 0; 0 < AR_LEN; i++)
-      cout << traverseList->genres[i] << ", ";
+      cout << traverseList->artist->genres[i] << ", ";
 
-    cout << popularity << ", ";
+    cout << traverseList->artist->popularity << ", ";
     cout << "\n";
 
     traverseList = traverseList->next;
@@ -215,14 +214,14 @@ ARTIST *findArtistName(ALIST *l, string name){
     if(traverseList == nullptr)
       found = true;
 
-    if(traverseList->artist.artist_name == name){
+    if(traverseList->artist->artist_name == name){
       found = true;
     }
     else{
       traverseList = traverseList->next;
     }
   }
-  if(traverseList == nullptr;){
+  if(traverseList == nullptr){
     artist = nullptr;
   }
   else{
