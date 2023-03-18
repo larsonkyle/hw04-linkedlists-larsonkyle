@@ -150,11 +150,27 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
 }
 
 void removeFirstArtist(ALIST *l){
-  int test;
+  ArtistEntry *temp;
+
+  temp = l->first; 
+  l->first = temp->next;
+
+  l->first.prev = nullptr;
+
+  delete temp;
+  temp = nullptr;
 }
 
 void removeLastArtist(ALIST *l){
-  int test;
+  ArtistEntry *temp;
+
+  temp = l->last;
+  l->last = temp->prev; 
+
+  l->last.next = nullptr;
+
+  delete temp; 
+  temp = nullptr;
 }
 
 void printArtistList(ALIST *l){
