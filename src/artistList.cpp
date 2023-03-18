@@ -174,13 +174,52 @@ void removeLastArtist(ALIST *l){
 }
 
 void printArtistList(ALIST *l){
-  int test;
+  ArtistEntry *traverseList;
+
+  traverseList = l->first;
+
+// artist_id,artist_name,total_followers,genres, popularity\n
+  while(traverseList != nullptr){
+    cout << traverseList->artist_id << ", "
+         << traverseList->artist_name << ", "
+         << traverseList->total_followers << ", ";
+  
+    for(int i = 0; 0 < AR_LEN; i++)
+      cout << traverseList->genres[i] << ", ";
+
+    cout << popularity << ", ";
+    cout << "\n";
+
+    traverseList = traverseList->next;
+  }
 }
 
 ARTIST *findArtistName(ALIST *l, string name){
-  ARTIST *test = nullptr;
+  ArtistEntry *traverseList;
+  Artist *artist; 
+  bool found = false; 
 
-  return test;
+  traverseList = l->first;
+
+  while(!found){
+    if(traverseList == nullptr)
+      found = true;
+
+    if(traverseList->artist.artist_name == name){
+      found = true;
+    }
+    else{
+      traverseList = traverseList->next;
+    }
+  }
+  if(traverseList == nullptr;){
+    artist = nullptr;
+  }
+  else{
+    artist = traverseList->artist; 
+  }
+
+  return artist;
 }
 
 void removeArtistbyName(ALIST *l, string name){
