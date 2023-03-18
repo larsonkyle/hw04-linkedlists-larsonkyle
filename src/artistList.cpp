@@ -43,6 +43,12 @@ AENTRY *newArtistEntry(ARTIST *a) {
   return p;
 }
 
+ARTIST *deleteArtistEntry(AENTRY *e){
+  Artist *test = nullptr;
+
+  return test;
+}
+
 void deleteArtistList(ALIST *l){
   int test;
 }
