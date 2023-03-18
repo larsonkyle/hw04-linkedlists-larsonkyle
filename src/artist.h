@@ -2,7 +2,7 @@
 
 #ifndef _ARTIST_H_
 #define _ARTIST_H_
-#define AR_LEN 10
+#define AR_LEN 20
 
 #include <string>
 #include <iostream>

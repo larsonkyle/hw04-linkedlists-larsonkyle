@@ -43,6 +43,10 @@ AENTRY *newArtistEntry(ARTIST *a) {
   return p;
 }
 
+void deleteArtistList(ALIST *l){
+  int test;
+}
+
 void prependArtist(ALIST *l, ARTIST *a){
   ArtistEntry *traverseList = nullptr;
 
