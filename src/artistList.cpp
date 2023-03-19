@@ -44,9 +44,43 @@ AENTRY *newArtistEntry(ARTIST *a) {
 }
 
 ARTIST *deleteArtistEntry(AENTRY *e){
-  Artist *test = nullptr;
+  Artist *artist;
+  ArtistEntry *temp;
 
-  return test;
+  artist = e->artist;
+
+  if(e->prev == nullptr){
+    temp = e->next;
+    temp->prev = nullptr;
+
+    e->list->first = temp;
+    e->list->length--;
+
+    delete e;
+    e = nullptr;
+  }else if(e->next == nullptr){
+    temp = e->prev;
+    temp->next = nullptr;
+
+    e->list->last = temp;
+    e->list->length--;
+
+    delete e;
+    e = nullptr;
+  }else{
+    temp = e->prev; 
+    temp->next = e->next; 
+
+    temp = e->next;
+    temp->prev = e->prev; 
+
+    e->list->length--;
+
+    delete e; 
+    e = nullptr;
+  }
+
+  return artist;
 }
 
 void deleteArtistList(ALIST *l){
@@ -65,7 +99,6 @@ void deleteArtistList(ALIST *l){
   }
 
   l->last = nullptr;
-  traverseList = nullptr; //redundant
 }
 
 void prependArtist(ALIST *l, ARTIST *a){
