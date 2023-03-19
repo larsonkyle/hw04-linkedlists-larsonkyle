@@ -166,6 +166,7 @@ void removeFirstArtist(ALIST *l){
   l->first = temp->next;
 
   l->first->prev = nullptr;
+  l->length--;
 
   delete temp;
   temp = nullptr;
@@ -178,6 +179,7 @@ void removeLastArtist(ALIST *l){
   l->last = temp->prev; 
 
   l->last->next = nullptr;
+  l->length--;
 
   delete temp; 
   temp = nullptr;
