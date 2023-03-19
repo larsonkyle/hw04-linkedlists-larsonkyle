@@ -50,7 +50,22 @@ ARTIST *deleteArtistEntry(AENTRY *e){
 }
 
 void deleteArtistList(ALIST *l){
-  int test;
+  ArtistEntry *traverseList;
+
+  traverseList = l->first; 
+  
+  while(traverseList != nullptr){
+    l->first = traverseList->next;
+
+    traverseList->prev = nullptr; //redundant
+    delete traverseList;
+
+    traverseList = l->first;
+    l->length--;
+  }
+
+  l->last = nullptr;
+  traverseList = nullptr; //redundant
 }
 
 void prependArtist(ALIST *l, ARTIST *a){
