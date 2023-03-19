@@ -145,8 +145,8 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
   ArtistEntry *newNode; //= nullptr; 
   ArtistEntry *temp; //= nullptr; 
 
-  newNode = newArtistEntry(a); // new ArtistEntry 
-  newNode->artist = a;
+  // newNode = newArtistEntry(a); // new ArtistEntry 
+  // newNode->artist = a;
 
   // if (e->prev == nullptr){
   //   newNode->next = e; 
@@ -178,8 +178,8 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
   ArtistEntry *newNode; //= nullptr; 
   ArtistEntry *temp; //= nullptr; 
 
-  newNode = newArtistEntry(a); // new ArtistEntry 
-  newNode->artist = a;
+  // newNode = newArtistEntry(a); // new ArtistEntry 
+  // newNode->artist = a;
 
   // if (e->next == nullptr){
   //   e->next = newNode;
