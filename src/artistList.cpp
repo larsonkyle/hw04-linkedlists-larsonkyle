@@ -76,16 +76,20 @@ void prependArtist(ALIST *l, ARTIST *a){
 
   if (!l->first){
     l->first = newArtistEntry(a);
+    traverseList = l->last; 
+
+    traverseList->list = l;
     l->last = l->first;
     l->length++;
   } 
   else{
     traverseList = l->first;
-
     traverseList->prev = newArtistEntry(a);
-    traverseList = traverseList->prev;
 
+    traverseList = traverseList->prev;
     traverseList->next = l->first;
+    
+    traverseList->list = l;
     l->first = traverseList;
     l->length++;
   }
@@ -96,16 +100,20 @@ void appendArtist(ALIST *l, ARTIST *a){
 
   if(!l->last){
     l->last = newArtistEntry(a);
+    traverseList = l->last; 
+
+    traverseList->list = l;
     l->first = l->last;
     l->length++;
   }
   else{
     traverseList = l->last;
-
     traverseList->next = newArtistEntry(a);
-    traverseList = traverseList->next;
 
+    traverseList = traverseList->next;
     traverseList->prev = l->last;
+
+    traverseList->list = l;
     l->last = traverseList;
     l->length++;
   }
