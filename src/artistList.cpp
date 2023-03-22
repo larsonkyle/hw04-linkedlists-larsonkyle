@@ -48,34 +48,7 @@ ARTIST *deleteArtistEntry(AENTRY *e){
   ArtistEntry *temp;
 
   artist = e->artist;
-
-  if(e->prev == nullptr){
-    temp = e->next;
-    temp->prev = nullptr;
-
-    e->list->first = temp;
-    e->list->length--;
-
-    delete e;
-  }else if(e->next == nullptr){
-    temp = e->prev;
-    temp->next = nullptr;
-
-    e->list->last = temp;
-    e->list->length--;
-
-    delete e;
-  }else{
-    temp = e->prev; 
-    temp->next = e->next; 
-
-    temp = e->next;
-    temp->prev = e->prev; 
-
-    e->list->length--;
-
-    delete e; 
-  }
+	delete e;
 
   return artist;
 }
