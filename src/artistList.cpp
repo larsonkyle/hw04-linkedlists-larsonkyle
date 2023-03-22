@@ -78,7 +78,7 @@ void prependArtist(ALIST *l, ARTIST *a){
     l->first = newArtistEntry(a);
     traverseList = l->last; 
 
-    traverseList->list = l;
+    //traverseList->list = l;
     l->last = l->first;
     l->length++;
   } 
@@ -89,7 +89,7 @@ void prependArtist(ALIST *l, ARTIST *a){
     traverseList = traverseList->prev;
     traverseList->next = l->first;
     
-    traverseList->list = l;
+    //traverseList->list = l;
     l->first = traverseList;
     l->length++;
   }
@@ -129,8 +129,8 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     e->prev = newNode;
 
-    //e->list->first = newNode;
-    //e->list->length++;
+    e->list->first = newNode;
+    e->list->length++;
 
      newNode = nullptr;
      temp = nullptr;
@@ -144,7 +144,7 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     newNode->prev = temp;
 
-    //e->list->length++;
+    e->list->length++;
     
      newNode = nullptr;
      temp = nullptr;
@@ -161,8 +161,8 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
 	newNode->prev = e;
 	e->next = newNode;
 
-    //e->list->last = newNode;
-    //e->list->length++;
+    e->list->last = newNode;
+    e->list->length++;
 
      newNode = nullptr;
      temp = nullptr;
@@ -176,7 +176,7 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
     newNode->prev = e;
     newNode->next = temp; 
 
-    //e->list->length++;
+    e->list->length++;
 
      newNode = nullptr;
      temp = nullptr;
