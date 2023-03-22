@@ -150,8 +150,8 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
   newNode = newArtistEntry(a); // new ArtistEntry 
 
   if (e->next == nullptr){
-    e->next = newNode;
-    newNode->prev = e;
+	newNode->prev = e;
+	e->next = newNode;
 
     //e->list->last = newNode;
     //e->list->length++;
@@ -162,10 +162,10 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
   else{
     temp = e->next;
 
-    e->next = newNode;
-    newNode->prev = e; 
-
     temp->prev = newNode;
+    e->next = newNode; 
+
+    newNode->prev = e;
     newNode->next = temp; 
 
     //e->list->length++;
@@ -211,7 +211,7 @@ void printArtistList(ALIST *l){
          << traverseList->artist->artist_name << ", "
          << traverseList->artist->total_followers << ", ";
   
-    for(int i = 0; 0 < AR_LEN; i++)
+    for(int i = 0; i < AR_LEN; i++)
       cout << traverseList->artist->genres[i] << ", ";
 
     cout << traverseList->artist->popularity << ", ";
