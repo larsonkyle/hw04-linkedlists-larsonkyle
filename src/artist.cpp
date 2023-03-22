@@ -28,9 +28,20 @@ ARTIST *newArtist(string artist_id, string artist_name, int total_followers, str
 }
 
 void deleteArtist(ARTIST *a){
-  int test;
+  delete a; 
+  a = nullptr;
 }
 
 void printArtist(ARTIST *a){
-  int test;
+  cout << traverseList->artist->artist_id << ", "
+       << traverseList->artist->artist_name << ", "
+       << traverseList->artist->total_followers << ", ";
+  
+  for(int i = 0; i < AR_LEN && !(traverseList->artist->genres[i] == 0); i++){// 10 = AR_LEN
+    cout << traverseList->artist->genres[i] << ", ";
+  }
+
+  cout << traverseList->artist->popularity << ", ";
+  cout << "\n";
+
 }
