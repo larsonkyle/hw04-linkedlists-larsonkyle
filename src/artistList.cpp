@@ -121,11 +121,11 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     e->prev = newNode;
 
-    e->list->first = newNode;
-    e->list->length++;
+    //e->list->first = newNode;
+    //e->list->length++;
 
-    // newNode = nullptr;
-    // temp = nullptr;
+     newNode = nullptr;
+     temp = nullptr;
   }
   else{
     temp = e->prev;
@@ -136,10 +136,10 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     newNode->prev = temp;
 
-    e->list->length++;
+    //e->list->length++;
     
-    // newNode = nullptr;
-    // temp = nullptr;
+     newNode = nullptr;
+     temp = nullptr;
   }
 }
 
@@ -153,11 +153,11 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
     e->next = newNode;
     newNode->prev = e;
 
-    e->list->last = newNode;
-    e->list->length++;
+    //e->list->last = newNode;
+    //e->list->length++;
 
-    // newNode = nullptr;
-    // temp = nullptr;
+     newNode = nullptr;
+     temp = nullptr;
   }
   else{
     temp = e->next;
@@ -168,10 +168,10 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
     temp->prev = newNode;
     newNode->next = temp; 
 
-    e->list->length++;
+    //e->list->length++;
 
-    // newNode = nullptr;
-    // temp = nullptr;
+     newNode = nullptr;
+     temp = nullptr;
   }
 }
 
