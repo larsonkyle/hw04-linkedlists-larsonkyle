@@ -47,38 +47,35 @@ ARTIST *deleteArtistEntry(AENTRY *e){
   Artist *artist;
   ArtistEntry *temp;
 
-  // artist = e->artist;
+  artist = e->artist;
 
-  // if(e->prev == nullptr){
-  //   temp = e->next;
-  //   temp->prev = nullptr;
+  if(e->prev == nullptr){
+    temp = e->next;
+    temp->prev = nullptr;
 
-  //   e->list->first = temp;
-  //   e->list->length--;
+    e->list->first = temp;
+    e->list->length--;
 
-  //   delete e;
-  //   e = nullptr;
-  // }else if(e->next == nullptr){
-  //   temp = e->prev;
-  //   temp->next = nullptr;
+    delete e;
+  }else if(e->next == nullptr){
+    temp = e->prev;
+    temp->next = nullptr;
 
-  //   e->list->last = temp;
-  //   e->list->length--;
+    e->list->last = temp;
+    e->list->length--;
 
-  //   delete e;
-  //   e = nullptr;
-  // }else{
-  //   temp = e->prev; 
-  //   temp->next = e->next; 
+    delete e;
+  }else{
+    temp = e->prev; 
+    temp->next = e->next; 
 
-  //   temp = e->next;
-  //   temp->prev = e->prev; 
+    temp = e->next;
+    temp->prev = e->prev; 
 
-  //   e->list->length--;
+    e->list->length--;
 
-  //   delete e; 
-  //   e = nullptr;
-  // }
+    delete e; 
+  }
 
   return artist;
 }
@@ -145,20 +142,19 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
   ArtistEntry *newNode; //= nullptr; 
   ArtistEntry *temp; //= nullptr; 
 
-  // newNode = newArtistEntry(a); // new ArtistEntry 
-  // newNode->artist = a;
+  newNode = newArtistEntry(a); // new ArtistEntry 
 
-  // if (e->prev == nullptr){
-  //   newNode->next = e; 
-  //   e->prev = newNode;
+  if (e->prev == nullptr){
+    newNode->next = e; 
+    e->prev = newNode;
 
-  //   e->list->first = newNode;
-  //   e->list->length++;
+    e->list->first = newNode;
+    e->list->length++;
 
-  //   newNode = nullptr;
-  //   temp = nullptr;
-  // }
-  // else{
+    // newNode = nullptr;
+    // temp = nullptr;
+  }
+  else{
     temp = e->prev;
 
     temp->next = newNode;
@@ -167,31 +163,30 @@ void insertArtistBefore(AENTRY *e, ARTIST *a){
     newNode->next = e; 
     newNode->prev = temp;
 
-    // e->list->length++;
+    e->list->length++;
     
     // newNode = nullptr;
     // temp = nullptr;
-  // }
+  }
 }
 
 void insertArtistAfter(AENTRY *e, ARTIST *a){
   ArtistEntry *newNode; //= nullptr; 
   ArtistEntry *temp; //= nullptr; 
 
-  // newNode = newArtistEntry(a); // new ArtistEntry 
-  // newNode->artist = a;
+  newNode = newArtistEntry(a); // new ArtistEntry 
 
-  // if (e->next == nullptr){
-  //   e->next = newNode;
-  //   newNode->prev = e;
+  if (e->next == nullptr){
+    e->next = newNode;
+    newNode->prev = e;
 
-  //   e->list->last = newNode;
-  //   e->list->length++;
+    e->list->last = newNode;
+    e->list->length++;
 
-  //   newNode = nullptr;
-  //   temp = nullptr;
-  // }
-  // else{
+    // newNode = nullptr;
+    // temp = nullptr;
+  }
+  else{
     temp = e->next;
 
     e->next = newNode;
@@ -200,11 +195,11 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
     temp->prev = newNode;
     newNode->next = temp; 
 
-    // e->list->length++;
+    e->list->length++;
 
     // newNode = nullptr;
     // temp = nullptr;
-  // }
+  }
 }
 
 void removeFirstArtist(ALIST *l){
@@ -271,6 +266,7 @@ ARTIST *findArtistName(ALIST *l, string name){
       traverseList = traverseList->next;
     }
   }
+
   if(traverseList == nullptr){
     artist = nullptr;
   }
@@ -282,5 +278,53 @@ ARTIST *findArtistName(ALIST *l, string name){
 }
 
 void removeArtistbyName(ALIST *l, string name){
-  int test;
+  ArtistEntry *traverseList;
+  ArtistEntry *temp;
+  bool found = false; 
+
+  traverseList = l->first;
+
+  while(!found){
+    if(traverseList == nullptr){
+      found = true;
+    }
+
+    if(traverseList->artist->artist_name == name){
+      found = true;
+    }
+    else{
+      traverseList = traverseList->next;
+    }
+  }
+
+  if(traverseList->prev == nullptr){
+    temp = traverseList->next;
+    temp->prev = nullptr;
+
+    l->first = temp;
+    l->length--;
+
+    delete traverseList;
+    //traverseList = nullptr;
+  }else if(traverseList->next == nullptr){
+    temp = traverseList->prev;
+    temp->next = nullptr;
+
+    l->last = temp;
+    l->length--;
+
+    delete traverseList;
+    //traverseList = nullptr;
+  }else{
+    temp = traverseList->prev; 
+    temp->next = traverseList->next; 
+
+    temp = traverseList->next;
+    temp->prev = traverseList->prev; 
+
+    l->length--;
+
+    delete traverseList; 
+  //traverseList = nullptr;
+  }
 }
