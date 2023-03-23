@@ -49,6 +49,7 @@ ARTIST *deleteArtistEntry(AENTRY *e){
 
   artist = e->artist;
 	delete e;
+	e = nullptr;
 
   return artist;
 }
@@ -68,7 +69,8 @@ void deleteArtistList(ALIST *l){
     l->length--;
   }
 
-  l->last = nullptr;
+	delete l;
+  l = nullptr;
 }
 
 void prependArtist(ALIST *l, ARTIST *a){
