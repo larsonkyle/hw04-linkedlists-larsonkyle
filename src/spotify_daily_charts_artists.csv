@@ -577,7 +577,7 @@ artist_id,artist_name,total_followers,genres,popularity
 6gcteR920pLEynlHzjSRYd,Kiyo,555723,"['opm', 'pinoy hip hop', 'tagalog rap']",57
 5DuzBeOgFwViFcv00Q5PFb,WINNER,2366763,"['k-pop', 'k-pop boy group']",58
 2UeuiDT17tm6ljs9D4bSMX,Agsunta,600778,"['opm', 'pinoy rock']",50
-4V8LLVI7PbaPR0K2TGSxFF,"Tyler, The Creator",9567791,"['hip hop', 'rap']",85
+4V8LLVI7PbaPR0K2TGSxFF,"Tyler The Creator",9567791,"['hip hop', 'rap']",85
 24CgJHK6T7C5OmUbiLLMjJ,Luh Kel,997124,"['pop r&b', 'st louis rap']",59
 0C8kbAJOGo7CHx8jDTyTfR,Mena Massoud,17689,"['hollywood', 'show tunes']",50
 2Zi3RrdQqk63Xj0914STkS,Naomi Scott,330478,"['hollywood', 'vapor pop']",62
@@ -756,9 +756,9 @@ artist_id,artist_name,total_followers,genres,popularity
 7MmIC8lbUdmL6c05M63KF6,The Rossman Ensemble,144,[],22
 2tIP7SsRs7vjIcLrU85W8J,The Kid LAROI,3995738,"['australian hip hop', 'pop']",82
 6XpaIBNiVzIetEPCWDvAFP,Whitney Houston,8378337,"['dance pop', 'pop', 'urban contemporary']",75
-4QQgXkCYTt3BlENzhyNETg,"Earth, Wind & Fire",3605633,"['disco', 'funk', 'jazz funk', 'quiet storm', 'soul']",73
+4QQgXkCYTt3BlENzhyNETg,"Earth Wind & Fire",3605633,"['disco', 'funk', 'jazz funk', 'quiet storm', 'soul']",73
 0bBz5bRBkExaej2HxtVfCw,347aidan,379793,['sad rap'],69
-05YVYeV4HxYp5rrWalvuE1,"Grover Washington, Jr.",269006,['smooth jazz'],63
+05YVYeV4HxYp5rrWalvuE1,"Grover Washington Jr.",269006,['smooth jazz'],63
 1McMsnEElThX1knmY4oliG,Olivia Rodrigo,20703062,['pop'],85
 0ZUvK7zGdXLd78mQr3t1Tw,Ricky Montgomery,1280004,"['indie pop', 'la indie', 'pop']",70
 1HkpK55jsORzgtOURbOeQH,1096 Gang,43609,"['pinoy hip hop', 'tagalog rap']",41
@@ -843,7 +843,7 @@ artist_id,artist_name,total_followers,genres,popularity
 027TpXKGwdXP7iwbjUSpV8,The Walters,404755,['chicago indie'],71
 64k5e9kV9MdukXjFrR5R37,Jessi,1505907,['k-pop'],65
 35R1B97CfrqKFFI3QBkTDx,RealestK,195324,[],65
-7c1HgFDe8ogy5NOZ1ANCJQ,"Car, the garden",110333,"['k-indie', 'korean pop']",51
+7c1HgFDe8ogy5NOZ1ANCJQ,"Car the garden",110333,"['k-indie', 'korean pop']",51
 1h6Cn3P4NGzXbaXidqURXs,Swedish House Mafia,3599679,"['edm', 'electro house', 'pop', 'pop dance', 'progressive electro house']",76
 1Cd373x8qzC7SNUg5IToqp,BoyWithUke,2246886,[],76
 0hDjKSKjl1DC7ovYTDJHe8,Bruno Major,950798,['pop'],69
