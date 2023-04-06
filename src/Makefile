@@ -1,10 +1,10 @@
 CC=g++
 
 
-all: main_menu
+all: hw04
 
-main_menu: main_menu.cpp artistList.o artist.o artistList.h artist.h
-	$(CC) main_menu.cpp -o main_menu artistList.o artist.o
+hw04: main_menu.cpp artistList.o artist.o artistList.h artist.h
+	$(CC) main_menu.cpp -o hw04 artistList.o artist.o
 
 artistList.o: artistList.cpp artistList.h
 	$(CC) -c artistList.cpp -o artistList.o
