@@ -224,7 +224,7 @@ void printArtistList(ALIST *l){ //ENTIRELY NEW CODE
   while(traverseList != nullptr){
     cout << traverseList->artist->artist_id  << "," << traverseList->artist->artist_name << "," << traverseList->artist->total_followers << ",";
   
-    for(int i = 0; i < AR_LEN; i++)
+    for(int i = 0; i < 6; i++)
       cout << traverseList->artist->genres[i];
     cout << "],";
 

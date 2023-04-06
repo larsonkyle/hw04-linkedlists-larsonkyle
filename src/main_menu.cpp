@@ -1,7 +1,3 @@
-// main_menu.cpp: main function (different than the driver provided) that implements
-// the menu driven interface as outlined in the directions of the README.md
-// MUST COMPLETE FOR FULL CREDIT.
-
 #include "artist.h"
 #include "artistList.h"
 #include <fstream>
@@ -18,7 +14,8 @@ int main() {
 
   //artistList pointer
   ArtistList *artistList;
-  ArtistEntry *traverseList;
+  ArtistEntry *traverseList = nullptr;
+  Artist *artist;
 
   //File object and file name
   std::fstream ioFile; //ioFile = inputoutputFile
@@ -32,6 +29,7 @@ int main() {
   //Menu input variables
   int choice1;
   char choice2;
+  
 
   ioFile.open(filename.c_str(), ios::in);
   artistList = newArtistList();
@@ -59,7 +57,7 @@ int main() {
      temp.erase(0, (temp.find(',', 0) + 1));
     }
 
-   std::getline(s, word, '\n');
+    std::getline(s, word, '\n');
     
     //check if entry was a 1 genre format or multi-genre format(csv file format error?)
    if (word.at(0) == '"'){
@@ -69,7 +67,7 @@ int main() {
       word.erase(0, 1);
    }
     popularity = std::stoi(word);
-   
+    
     appendArtist(artistList, newArtist(artist_id, artist_name, total_followers, genres, popularity));
   }
   
@@ -96,125 +94,64 @@ int main() {
 
               switch (choice2){
                 case 'a': 
-                        { //local variables
-                          std::string genresInput;
+                          artist_id = "1234testID";
+                          artist_name = "John Doe";
+                          total_followers = 3245;
 
-                          std::cout << "Please input the artist_id.\n";
-                          std::cin >> artist_id;
+                          for(int i = 0; i < AR_LEN; i++)
+                            genres[i].clear();
 
-                          std::cout << "Please input the artist_name.\n";
-                          std::cin >> artist_name;
-
-                          std::cout << "Please input the total_followers.\n";
-                          std::cin >> total_followers;
-
-                          std::cout << "Please the input the genres, press 1 to finish.\n";
-                          for (int i = 0; genresInput != "4"; i++){
-                            std::cin >> genres[i];
-                          }
+                          genres[0] = "[Pop ";
+                          genres[1] = "Rap";
+                          popularity = 99;
                           
-                          std::cout << "Please input the popularity.\n";
-                          std::cin >> popularity;
-
                           prependArtist(artistList, newArtist(artist_id, artist_name, total_followers, genres, popularity));
-                        }
                           break;
+                        
 
                 case 'b':
-                        { //local variables
-                          std::string genresInput;
-                          
-                          std::cout << "Please input the artist_id.\n";
-                          std::cin >> artist_id;
+                          artist_id = "1234testID";
+                          artist_name = "John Doe";
+                          total_followers = 3245;
 
-                          std::cout << "Please input the artist_name.\n";
-                          std::cin >> artist_name;
+                          for(int i = 0; i < AR_LEN; i++)
+                            genres[i].clear();
 
-                          std::cout << "Please input the total_followers.\n";
-                          std::cin >> total_followers;
-
-                          std::cout << "Please the input the genres, press 1 to finish.\n";
-                          for (int i = 0; genresInput != "4"; i++){
-                            std::cin >> genres[i];
-                          }
-                          
-                          std::cout << "Please input the popularity.\n";
-                          std::cin >> popularity;
+                          genres[0] = "[Pop ";
+                          genres[1] = "Rap";
+                          popularity = 99;
 
                           appendArtist(artistList, newArtist(artist_id, artist_name, total_followers, genres, popularity));
-                        }
                           break; 
 
-                case 'c':  
-                        {
-                          //local variables
-                          std::string findName;     //User inputted name
-                          ArtistEntry *traverseList;//temp ptr to find the name in the list
-                          std::string genresInput;
+                case 'c': artist_id = "1234testID";
+                          artist_name = "John Doe";
+                          total_followers = 3245;
 
-                          std::cout << "Please input an artist name\n";
-                          std::cin >> findName; 
+                          for(int i = 0; i < AR_LEN; i++)
+                            genres[i].clear();
 
-                          //find artistEntry/Node (No artistList functions can be used)
-                          traverseList = artistList->first; 
-                          while(findName != traverseList->artist->artist_name && traverseList != nullptr){
-                            traverseList = traverseList->next;
-                          }
-                          std::cout << "Please input the artist_id.\n";
-                          std::cin >> artist_id;
+                          genres[0] = "[Pop ";
+                          genres[1] = "Rap";
+                          popularity = 99;
 
-                          std::cout << "Please input the artist_name.\n";
-                          std::cin >> artist_name;
-
-                          std::cout << "Please input the total_followers.\n";
-                          std::cin >> total_followers;
-
-                          std::cout << "Please the input the genres, press 1 to finish.\n";
-                          for (int i = 0; genresInput != "4"; i++){
-                            std::cin >> genres[i];
-                          }
-                          
-                          std::cout << "Please input the popularity.\n";
-                          std::cin >> popularity;
-                          
+                          traverseList = artistList->first;
                           insertArtistBefore(traverseList, newArtist(artist_id, artist_name, total_followers, genres, popularity));
-                        }
-                          break; 
+                          break;
 
-                case 'd': 
-                        {
-                          //local variables
-                          std::string findName;     //User inputted name
-                          ArtistEntry *traverseList;//temp ptr to find the name in the list
-                          std::string genresInput;
+                case 'd': artist_id = "1234testID";
+                          artist_name = "John Doe";
+                          total_followers = 3245;
 
-                          std::cout << "Please input an artist name\n";
-                          std::cin >> findName; 
+                          for(int i = 0; i < AR_LEN; i++)
+                            genres[i].clear();
 
-                          //find artistEntry/Node (No artistList functions can be used)
-                          traverseList = artistList->first; 
-                          while(findName != traverseList->artist->artist_name && traverseList != nullptr){
-                            traverseList = traverseList->next;
-                          }
-                          std::cout << "Please input the artist_id.\n";
-                          std::cin >> artist_id;
+                          genres[0] = "[Pop ";
+                          genres[1] = "Rap";
+                          popularity = 99;
 
-                          std::cout << "Please input the artist_name.\n";
-                          std::cin >> artist_name;
-
-                          std::cout << "Please input the total_followers.\n";
-                          std::cin >> total_followers;
-
-                          std::cout << "Please the input the genres, press 1 to finish.\n";
-                          for (int i = 0; genresInput != "4"; i++){
-                            std::cin >> genres[i];
-                          }
-                          
-                          std::cout << "Please input the popularity.\n";
-                          std::cin >> popularity;
-                          
+                          traverseList = artistList->first;
                           insertArtistAfter(traverseList, newArtist(artist_id, artist_name, total_followers, genres, popularity));
-                        }
                           break; 
                 
                 default: std::cout << "Invalid input\n";
@@ -233,17 +170,8 @@ int main() {
                 case 'b': removeLastArtist(artistList);
                           break; 
 
-                case 'c': 
-                        { //local variables
-                          std::string findName;     //User inputted name
-                          Artist *artist;           //stores findArtistName() return data
-
-                          std::cout << "Please input an artist name\n";
-                          std::cin >> findName; 
-
-                          artist = findArtistName(artistList, findName);
-                          removeArtistbyName(artistList, artist->artist_name);
-                        }
+                case 'c': artist_name = "John Doe";
+                          removeArtistbyName(artistList, artist_name);
                           break; 
                 
                 default: std::cout << "Invalid input\n";
@@ -255,18 +183,8 @@ int main() {
               std::cin >> choice2;
 
               switch (choice2){
-                case 'a': 
-                        {
-                          //local variables
-                          std::string findName;     //User inputted name
-                          Artist *artist;           //stores findArtistName() return data
-
-                          std::cout << "Please input an artist name\n";
-                          std::cin >> findName; 
-
-                          artist = findArtistName(artistList, findName);
-                          printArtist(artist);
-                        }
+                case 'a': artist_name = "The Chainsmokers";
+                          printArtist(findArtistName(artistList, artist_name));
                           break;
 
                 case 'b': printArtistList(artistList);
