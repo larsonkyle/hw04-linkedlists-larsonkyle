@@ -37,7 +37,7 @@ int main() {
   artistList = newArtistList();
 
   //read entire file contents into linked list
-  // ioFile.ignore(9999, '\n'); //ignore first line of csv
+  ioFile.ignore(9999, '\n'); //ignore first line of csv
   while(!(ioFile.eof())){
     std::getline(ioFile, line);
     std::stringstream s(line);
