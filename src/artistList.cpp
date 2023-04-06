@@ -56,14 +56,19 @@ ARTIST *deleteArtistEntry(AENTRY *e){
 
 void deleteArtistList(ALIST *l){
   ArtistEntry *traverseList;
+  Artist *artist;
 
-  traverseList = l->first; 
+  traverseList = l->first;
+  // artist = traverseList->artist;
   
   while(traverseList != nullptr){
     l->first = traverseList->next;
-
+    artist = traverseList->artist; //NEWCODE
+    
     traverseList->prev = nullptr; //redundant
+    
     delete traverseList;
+    delete artist; //NEWCODE
 
     traverseList = l->first;
     l->length--;
@@ -211,20 +216,19 @@ void removeLastArtist(ALIST *l){
   temp = nullptr;
 }
 
-void printArtistList(ALIST *l){
+void printArtistList(ALIST *l){ //ENTIRELY NEW CODE
   ArtistEntry *traverseList;
   traverseList = l->first;
 
 // artist_id,artist_name,total_followers,genres, popularity\n
   while(traverseList != nullptr){
-    cout << traverseList->artist->artist_id << ","
-         << traverseList->artist->artist_name << ","
-         << traverseList->artist->total_followers << ",";
+    cout << traverseList->artist->artist_id  << "," << traverseList->artist->artist_name << "," << traverseList->artist->total_followers << ",";
   
     for(int i = 0; i < AR_LEN; i++)
-      cout << traverseList->artist->genres[i] << ",";
+      cout << traverseList->artist->genres[i];
+    cout << "],";
 
-    cout << traverseList->artist->popularity << ",";
+    cout << traverseList->artist->popularity;
     cout << "\n";
 
     traverseList = traverseList->next;
