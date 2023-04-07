@@ -170,7 +170,7 @@ int main() {
                 case 'b': removeLastArtist(artistList);
                           break; 
 
-                case 'c': artist_name = "John Doe";
+                case 'c': artist_name = "Martin Garrix";
                           removeArtistbyName(artistList, artist_name);
                           break; 
                 
