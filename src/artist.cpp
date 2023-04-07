@@ -33,15 +33,12 @@ void deleteArtist(ARTIST *a){
 }
 
 void printArtist(ARTIST *a){
-	cout << a->artist_id << ", "
-		  << a->artist_name << ", "
-		  << a->total_followers << ", ";
+	cout << a->artist_id << "," << a->artist_name << ", " << a->total_followers << ", ";
   
-	for(int i = 0; i < AR_LEN; i++){// 10 = AR_LEN
-		cout << a->genres[i] << ", ";
+	for(int i = 0; i < AR_LEN; i++){// 20 = AR_LEN
+		cout << a->genres[i];
 
 }
-
-	cout << a->popularity << ", ";
-	cout << "\n";
+	cout << "],";
+	cout << a->popularity << "\n";
 }

@@ -192,6 +192,9 @@ void insertArtistAfter(AENTRY *e, ARTIST *a){
 
 void removeFirstArtist(ALIST *l){
   ArtistEntry *temp;
+  Artist *artist;
+
+  artist = l->first->artist;
 
   temp = l->first; 
   l->first = temp->next;
@@ -200,11 +203,16 @@ void removeFirstArtist(ALIST *l){
   l->length--;
 
   delete temp;
+  delete artist;
   temp = nullptr;
+  artist = nullptr;
 }
 
 void removeLastArtist(ALIST *l){
   ArtistEntry *temp;
+  Artist *artist;
+
+  artist = l->last->artist;
 
   temp = l->last;
   l->last = temp->prev; 
@@ -212,8 +220,10 @@ void removeLastArtist(ALIST *l){
   l->last->next = nullptr;
   l->length--;
 
+  delete artist;
   delete temp; 
   temp = nullptr;
+  artist = nullptr;
 }
 
 void printArtistList(ALIST *l){ //ENTIRELY NEW CODE
@@ -291,6 +301,7 @@ void removeArtistbyName(ALIST *l, string name){
     l->first = temp;
     l->length--;
 
+    delete traverseList->artist;
     delete traverseList;
     //traverseList = nullptr;
   }else if(traverseList->next == nullptr){
@@ -300,6 +311,7 @@ void removeArtistbyName(ALIST *l, string name){
     l->last = temp;
     l->length--;
 
+    delete traverseList->artist;
     delete traverseList;
     //traverseList = nullptr;
   }else{
@@ -311,6 +323,7 @@ void removeArtistbyName(ALIST *l, string name){
 
     l->length--;
 
+    delete traverseList->artist;
     delete traverseList; 
   //traverseList = nullptr;
   }
